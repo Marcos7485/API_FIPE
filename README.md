@@ -1,5 +1,3 @@
-Claro, aquí tienes la documentación del proyecto en portugués:
-
 # Documentação do Projeto - Sistema de Consulta FIPE
 
 ## Descrição do Projeto

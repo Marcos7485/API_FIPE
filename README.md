@@ -1,66 +1,50 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Claro, aquí tienes la documentación del proyecto en portugués:
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Documentação do Projeto - Sistema de Consulta FIPE
 
-## About Laravel
+## Descrição do Projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este projeto consiste em um sistema de consulta de valores de veículos no Brasil usando uma API externa da FIPE. Ele permite que os usuários pesquisem e obtenham informações detalhadas sobre o valor de veículos no mercado.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Estrutura de Arquivos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Arquivos PHP
 
-## Learning Laravel
+- **app\Exports\FipeExport.php**: Neste arquivo, utilizamos a biblioteca "maatwebsite/excel" juntamente com o "phpoffice/phpspreadsheet" para criar arquivos XLSX. Além disso, criamos o modelo de arquivo XLSX e sua estrutura.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **app\Http\Controllers\Main.php**: Este controlador contém a organização das visualizações da página e, neste projeto, há apenas uma visualização.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **app\Http\Controllers\VeiculosController.php**: Neste controlador, organizamos as funções relacionadas à conexão com a API, bem como a criação de arquivos PDF e XLSX para download.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Arquivos de Modelos
 
-## Laravel Sponsors
+- **app\Models**: Não foi criado nenhum modelo, pois o projeto não requer conexão a um banco de dados.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Arquivos Públicos
 
-### Premium Partners
+- **public**: Neste diretório, os arquivos de estilo (CSS), scripts e recursos, como imagens usadas no projeto, estão organizados.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Arquivos de Estilo
 
-## Contributing
+- **public\css\styles.css**: Neste arquivo, estão todos os estilos aplicados à página.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Visualizações
 
-## Code of Conduct
+- **resources\views\inicio.blade.php**: Esta visualização representa a página inicial ou índice do projeto.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- **resources\views\layouts\main.blade.php**: Neste layout, você encontrará a estrutura HTML juntamente com os cabeçalhos e scripts usados. Também incorporamos o Bootstrap para funcionalidades responsivas e estilos em HTML.
 
-## Security Vulnerabilities
+- **resources\views\pdf\template.blade.php**: Este layout contém o modelo para a geração de arquivos PDF.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Funcionalidade do Projeto
 
-## License
+O projeto permite que os usuários realizem consultas de valores de veículos no mercado brasileiro usando uma API da FIPE. Algumas das funcionalidades principais são:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Pesquisa e consulta de informações sobre valores de veículos.
+- Geração de arquivos XLSX para baixar as informações consultadas.
+- Geração de arquivos PDF com modelos predefinidos.
+
+O projeto foi estruturado de forma eficiente para oferecer uma experiência de usuário fácil de usar e funcional.
+
+**Observação**: Esta documentação fornece uma visão geral da estrutura do projeto e de suas funcionalidades. É recomendável consultar o código-fonte para obter detalhes técnicos adicionais e configurações específicas do projeto.
+

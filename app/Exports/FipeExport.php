@@ -40,27 +40,27 @@ class FipeExport implements FromCollection, WithHeadings, WithEvents
     {
         return [
             AfterSheet::class => function (AfterSheet $event) {
-                // Aplicar estilo al título
+                // Estilo do titulo
                 $event->sheet->getStyle('A1:K1')->applyFromArray([
                     'font' => [
                         'bold' => true,
                         'size' => 14,
-                        'color' => ['rgb' => 'FFFFFF'], // Color de fuente en blanco
+                        'color' => ['rgb' => 'FFFFFF'], 
                     ],
                     'fill' => [
                         'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
                         'startColor' => [
-                            'rgb' => '006400', // Color de fondo (verde oscuro en este ejemplo)
+                            'rgb' => '006400',
                         ],
                     ],
                 ]);
 
-                // Supongamos que deseas aplicar el fondo gris a las filas vacías en el rango A3:K10
+                // Aplicando estilo na linea A3 até K3
                 $event->sheet->getStyle('A3:K3')->applyFromArray([
                     'fill' => [
                         'fillType' => \PhpOffice\PhpSpreadsheet\Style\Fill::FILL_SOLID,
                         'startColor' => [
-                            'rgb' => '808080', // Color de fondo gris
+                            'rgb' => '808080',
                         ],
                     ],
                 ]);

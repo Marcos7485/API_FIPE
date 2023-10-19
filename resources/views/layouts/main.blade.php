@@ -21,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            // Llena las opciones de marca al cargar la página usando la ruta definida en Laravel
+        
             $.get('/marcas', function(data) {
                 data.forEach(function(marca) {
                     $('#marca').append($('<option>', {
@@ -105,17 +105,16 @@
                 }
 
                 
-                tabla.style.transition = "opacity 2s"; 
-                // Aplicar una transición de 2 segundos a la propiedad de opacidad
+                tabla.style.transition = "opacity 2s"; // transição de 2 segundos na opacidade
+                
 
-                // Desvanecer la tabla gradualmente
                 tabla.style.opacity = 0;
 
-                // Esperar 2 segundos antes de mostrar el div
+                // Espera de 2 segundos
                 setTimeout(function() {
                     var div = document.getElementById("resultado");
-                    div.style.transition = "opacity 2s"; // Aplicar una transición de 2 segundos a la propiedad de opacidad
-                    div.style.opacity = 1; // Hacer que el div aparezca gradualmente
+                    div.style.transition = "opacity 2s"; // transição de 2 segundos na opacidade
+                    div.style.opacity = 1; // Mostrar gradualmente o div
                 }, 2000);
             });
         });

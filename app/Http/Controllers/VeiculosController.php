@@ -9,6 +9,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class VeiculosController extends Controller
 {
+    // obter a lista de marcas disponiveis
     public function getMarcas()
     {
         $client = new Client();
@@ -23,6 +24,7 @@ class VeiculosController extends Controller
         return response()->json(['error' => 'Error al obtener las marcas'], 500);
     }
 
+    // obter a lista de modelos da marca especificada
     public function getModelos($marcaCodigo)
     {
         $client = new Client();
@@ -37,6 +39,7 @@ class VeiculosController extends Controller
         return response()->json(['error' => 'Error al obtener los modelos'], 500);
     }
 
+    // obter a lista de ano do modelo pesquisado
     public function getAnos($marcaCodigo, $modeloCodigo)
     {
         $client = new Client();
@@ -51,6 +54,7 @@ class VeiculosController extends Controller
         return response()->json(['error' => 'Error al obtener los años'], 500);
     }
 
+    // Obter Valor do veiculo pesquisado
     public function getValor($marcaCodigo, $modeloCodigo, $anoCodigo)
     {
         $client = new Client();
@@ -65,6 +69,7 @@ class VeiculosController extends Controller
         return response()->json(['error' => 'Error al obtener el valor'], 500);
     }
 
+    // Criação do archivo PDF
     public function generatePDF($marcaCodigo, $modeloCodigo, $anoCodigo)
     {
         $client = new Client();
@@ -85,6 +90,7 @@ class VeiculosController extends Controller
         return response()->json(['error' => 'Error al obtener el valor'], 500);
     }
 
+    // Criação do archivo XLSX
     public function generateXLSX($marcaCodigo, $modeloCodigo, $anoCodigo)
     {
         $client = new Client();
@@ -94,10 +100,10 @@ class VeiculosController extends Controller
         if ($response->getStatusCode() === 200) {
             $valor = json_decode($response->getBody(), true);
     
-            // Crea una instancia de la clase de exportación y pasa los datos
+        
             $export = new FipeExport([$valor]);
     
-            // Exporta los datos a XLSX
+    
             return Excel::download($export, 'informacion_fipe.xlsx');
         }
     
@@ -109,5 +115,5 @@ class VeiculosController extends Controller
 /*
 Funcionalidad:
 - Neste controller organizei as funções realizadas tanto na conexão com a API, como a criação de archivos PDF e XLSX para download.
-
+- Utilizamos a biblioteca GuzzleHttp para facilitar as solicitudes HTTP
 */

@@ -53,7 +53,7 @@
     </div>
 
     <div id="resultado">
-        <!-- Aquí se mostrará el resultado de la búsqueda -->
+        <!-- Aqui teremos o resultado da busqueda -->
     </div>
 </div>
 

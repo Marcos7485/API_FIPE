@@ -19,13 +19,6 @@
             text-align: center;
         }
 
-        h2 {
-            font-size: 20px;
-            text-align: center;
-            margin-top: 40px;
-            /* Aumenta el margen superior para evitar que se superponga con el banner */
-        }
-
         .info-container {
             border: 1px solid #ccc;
             padding: 20px;
@@ -64,10 +57,8 @@
 
 <body>
     <div class="header">
-        <!-- Contenido del banner fijo en la parte superior -->
         <h1>Informação FIPE</h1>
     </div>
-    <h2></h2>
     <div class="info-container">
         <div class="info-item">
             <span class="info-label">Marca:</span>

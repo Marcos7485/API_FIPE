@@ -22,6 +22,7 @@
         .info-container {
             border: 1px solid #ccc;
             padding: 20px;
+            margin-top: 40px;
             background-color: #f9f9f9;
             border-radius: 5px;
         }
